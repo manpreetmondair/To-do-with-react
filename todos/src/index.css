@@ -1,0 +1,23 @@
+
+* 
+{ 
+  box-sizing: border-box;
+ }
+
+img{
+  width: 100%;
+}
+.addingtodo{
+  margin-top: 20px;
+}
+.icon{
+    width:100px;
+    height:100px;
+    float: center;
+    background:palevioletred;
+    margin-top: 20px;
+    margin-left: 450px;
+}
+body{
+  background-color: #ecc6d9
+}
