@@ -1,14 +1,13 @@
 import React from 'react';
 // import Image from './Image';
 import Todos from './Todos';
-import AddTodo from './AddTodo'
+// import AddTodo from './AddTodo'
 class App extends React.Component{
     render(){
            return (
             <div>
-               <i className="fa fa-list-ol fa-4x icon" aria-hidden="true"><h4>To-Do-List</h4></i>
-                <AddTodo></AddTodo>
-                <Todos></Todos>
+             <h2>To-Do-List</h2>
+               <Todos></Todos>
             </div>  
         )
     }

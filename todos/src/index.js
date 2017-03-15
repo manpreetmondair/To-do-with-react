@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import './index.css';
 
+//Render root components
 ReactDOM.render(
   <App />,
   document.getElementById('root')
