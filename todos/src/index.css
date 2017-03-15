@@ -13,6 +13,9 @@ img{
 .addingtodo{
   margin-top: 20px;
 }
+.done{
+  text-decoration: line-through;
+}
 /*.icon{
     width:100px;
     height:100px;

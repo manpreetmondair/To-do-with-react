@@ -1,13 +1,14 @@
 //load react
+// Load React
 import React from 'react';
-import ReactDOM from 'react-dom'; 
+import ReactDOM from 'react-dom';
 
-//load componenets, these will change according to our project
-import App from './components/App';
+// Load components
+import Routes from './Routes';
 import './index.css';
 
-//Render root components
+// Render root component
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <Routes />,
+    document.getElementById('root')
 );

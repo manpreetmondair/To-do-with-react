@@ -7,47 +7,26 @@ class AddTodo extends React.Component{
 
         this.state = {
             description: '',
-            category: '',
-            todoID: '',
-            completed: '',
-            getTodos: props.getTodos
+            category: ''
+            
         }
     }
-   addTodo(getTodos){                    
-        //Post to /api/v1/todos
-        if (this.state.description !== '' && this.state.category !== ''){
-        fetch('/api/v1/todos', {
-            method: 'Post',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                todo: this.state.description,
-                category: this.state.category,
-                todoID: this.state.id,
-                completed: this.state.completed
-                // due_at: this.state.due_at,
-                // completed: false
+   onClick(addTodo){                    
+        //Post to /api/v1/todos // Call parent addTodo method
+        addTodo(this.state.description, this.state.category)
 
-            })
+        // Sets state of fields, and triggers render() again
+        this.setState({
+            description: '',
+            category: ''
         })
-        .then(response => response.json())
-        .then(response => {
-             //clear the form fields
-            this.setState({
-                description: '',
-                category: '',
-            })
-        //Reload Lists
-        this.state.getTodos(response)
-        })
-        }
-    }
+    
+   }
 
     render(){
              return (
             <div className="container addingtodo">
-                <div className="row">
+                
                     <div className="col-sm-6">
                         <div className="form-group">
                             <select className="form-control" value={this.state.category} onChange={(e) => this.setState({category: e.target.value})}>
@@ -64,12 +43,12 @@ class AddTodo extends React.Component{
                         <div className="input-group">
                             <input type="text" className="form-control" placeholder="Task..." value ={this.state.description} onChange={(e) => this.setState({description: e.target.value})}/>
                             <span className="input-group-btn">
-                            <button className="btn btn-default" type="button" onClick={() => this.addTodo(this.props.getTodos)}>Add Todo</button>
+                            <button className="btn btn-default" type="button" onClick={() => this.onClick(this.props.addTodo)}>Add Todo</button>
                             </span>
                         </div>
                     </div>
                 </div>
-            </div>
+           
         )
     } 
  }
